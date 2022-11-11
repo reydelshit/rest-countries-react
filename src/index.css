@@ -250,6 +250,7 @@ header div{
   justify-content: center;
   align-items: center;
   display: flex;
+  margin-top: 5rem;
 }
 
 .paginationBTN__container .paginationButton{

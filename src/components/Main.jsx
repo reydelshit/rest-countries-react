@@ -14,7 +14,7 @@ const Main = ({search: Search, filter: Filter, country: Country, paginationBTN: 
         <div className="main__body">
             <Country storeRegion={storeRegion}/>
         </div>
-        <PaginationButton />
+
     </div>
   )
 }

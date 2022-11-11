@@ -1,12 +1,18 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 
-
-import Bold from './utils/Bold';
+import CountryCard from './CountryCard';
+import PaginationButton from './PaginationButton';
 
 const Country = ({storeRegion}) => {
     
-  const [country, setCountry] = useState([])
+  const [country, setCountry] = useState([]);
+  const [currentPage, setCurrrentPage] = useState(1);
+
+  const [countryPerPage] = useState(8)
+
+  
+
   
   useEffect(() => {
 
@@ -15,16 +21,11 @@ const Country = ({storeRegion}) => {
         const fetchCountries = async () => {
             const get = await fetch('https://restcountries.com/v3.1/all')
             const store = await get.json()
-            // console.log(store)
 
             const mapThroughCountries = store.map((co) => {
-              return co
+              return co;
             })
-
-            // mapThroughCountries();
             setCountry(mapThroughCountries)
-
-            console.log(mapThroughCountries);
           }
 
         fetchCountries();
@@ -39,23 +40,16 @@ const Country = ({storeRegion}) => {
     
   }, [storeRegion])
 
+  const indexOfLastPost = currentPage * countryPerPage;
+  const indexOfFirstPost = indexOfLastPost - countryPerPage;
+  const currentCountries = country.slice(indexOfFirstPost, indexOfLastPost);
+
+  // console.log(countryPerPage)
+
   return (
-    <div className='country__container'>
-
-      {country.map((coun, index) => (
-        index < 8 &&         
-        <div className='country__indi' key={index}>
-          <img src={coun.flags.png} alt={coun.name} />
-            <div className='country__information'>
-                <h2>{coun.name.official}</h2>
-
-                <p><Bold text="Population"/>: {coun.population}</p>
-                <p><Bold text="Region"/>: {coun.region}</p>
-                <p><Bold text="Capital"/>: {coun.capital}</p>
-
-          </div>
-      </div>
-      ))}
+    <div>
+      <CountryCard currentCountries={currentCountries}/>
+      <PaginationButton totalPost={country.length} countryPerPage={countryPerPage} setCurrrentPage={setCurrrentPage}/>
     </div>
   )
 }

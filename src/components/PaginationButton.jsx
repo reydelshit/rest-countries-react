@@ -1,16 +1,21 @@
 import React from 'react'
 
-const PaginationButton = () => {
+const PaginationButton = ({totalPost, countryPerPage, setCurrrentPage}) => {
 
-    const paginationNo = [1,2,3];
+    let countryIndex = [];
+
+    for(let i = 1; i <= Math.ceil(totalPost/countryPerPage); i++){
+      countryIndex.push(i)
+    }
 
   return (
     <div className='paginationBTN__container'>
 
-        {paginationNo.map((wow, index) => (
-                <div key={index} className='paginationButton'>
-                    <button>{wow}</button>
-                </div>
+        {countryIndex.map((country, index) => (
+              index < 15 &&      
+              <div key={index} className='paginationButton'>
+                <button onClick={() => setCurrrentPage(country)}>{country}</button>
+              </div>
             ))}
     
     </div>
