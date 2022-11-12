@@ -12,7 +12,7 @@ const PaginationButton = ({totalPost, countryPerPage, setCurrrentPage}) => {
     <div className='paginationBTN__container'>
 
         {countryIndex.map((country, index) => (
-              index < 15 &&      
+              index < 10 &&      
               <div key={index} className='paginationButton'>
                 <button onClick={() => setCurrrentPage(country)}>{country}</button>
               </div>

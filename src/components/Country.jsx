@@ -1,45 +1,19 @@
 import React from 'react'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { MainContext } from '../context/MainContext';
 
 import CountryCard from './CountryCard';
 import PaginationButton from './PaginationButton';
 
-const Country = ({storeRegion}) => {
+const Country = () => {
+
+  const { country } = useContext(MainContext)
     
-  const [country, setCountry] = useState([]);
+  // const [country, setCountry] = useState([]);
   const [currentPage, setCurrrentPage] = useState(1);
 
-  const [countryPerPage] = useState(8)
-
+  const [countryPerPage] = useState(10)
   
-
-  
-  useEffect(() => {
-
-    try{
-      if(!storeRegion.length){      
-        const fetchCountries = async () => {
-            const get = await fetch('https://restcountries.com/v3.1/all')
-            const store = await get.json()
-
-            const mapThroughCountries = store.map((co) => {
-              return co;
-            })
-            setCountry(mapThroughCountries)
-          }
-
-        fetchCountries();
-      } else {
-        setCountry(storeRegion)
-
-      }
-
-    } catch(err){
-      console.log(err)
-    }
-    
-  }, [storeRegion])
-
   const indexOfLastPost = currentPage * countryPerPage;
   const indexOfFirstPost = indexOfLastPost - countryPerPage;
   const currentCountries = country.slice(indexOfFirstPost, indexOfLastPost);
