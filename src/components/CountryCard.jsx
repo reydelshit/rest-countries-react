@@ -5,18 +5,21 @@ import Bold from './utils/Bold';
 
 const CountryHolder = ({currentCountries, filteredCountry}) => {
 
+  // if(filteredRegion){
+  //   console.log('filtered region')
+  // }
   
   return (
     <div className='country__container'>
-        {currentCountries.map((coun, index) => (
+        {currentCountries.map((current, index) => (
           <div className='country__indi' key={index}>
-              <img src={coun.flags.png} alt={coun.name} />
+              <img src={current.flags.png} alt={current.name} />
                   <div className='country__information'>
-                      {coun.name.official ? <h2>{coun.name.official}</h2> : <h2>{coun.name}</h2>}
+                      {current.name.common ? <h2>{current.name.common}</h2> : <h2>{current.name}</h2>}
                       
-                      <p><Bold text="Population"/>: {coun.population}</p>
-                      <p><Bold text="Region"/>: {coun.region}</p>
-                      <p><Bold text="Capital"/>: {coun.capital}</p>
+                      <p><Bold text="Population"/>: {current.population}</p>
+                      <p><Bold text="Region"/>: {current.region}</p>
+                      <p><Bold text="Capital"/>: {current.capital}</p>
               </div>
             </div>
         ))}

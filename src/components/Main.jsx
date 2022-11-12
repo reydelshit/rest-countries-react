@@ -8,8 +8,6 @@ const Main = ({search: Search, filter: Filter, country: Country}) => {
   const [storeRegion, setStoreRegion] = useState([])
   const [country, setCountry] = useState([]);
 
-
-
   // search 
   const [search, setSearch] = useState('')
 
@@ -24,6 +22,7 @@ const Main = ({search: Search, filter: Filter, country: Country}) => {
             const mapThroughCountries = store.map((co) => {
               return co;
             })
+            // console.log(mapThroughCountries)
             setCountry(mapThroughCountries)
           }
         fetchCountries();
@@ -38,7 +37,6 @@ const Main = ({search: Search, filter: Filter, country: Country}) => {
   }, [storeRegion])
 
 
-
   // filter country search 
   const filterCountry = (valueFromOnchange) => {
     const converToLowerCase = valueFromOnchange.toLowerCase();
@@ -47,23 +45,21 @@ const Main = ({search: Search, filter: Filter, country: Country}) => {
   }
 
   const filteredCountry = country.filter((current) => {
-    const currentNameLowerCase = current.name.official.toLowerCase();
-    if(currentNameLowerCase.includes(search)){
-      return currentNameLowerCase;
+
+    if(current.name.official){
+      const currentNameLowerCase = current.name.official.toLowerCase();
+      if(currentNameLowerCase.includes(search)){
+        return currentNameLowerCase;
+      } 
+    } else {
+      const currentNameLowerCase = current.name.toLowerCase();
+        if(currentNameLowerCase.includes(search)){
+          return currentNameLowerCase;
+        }
     }
+
   })
 
-  // console.log(filteredCountry)
-
-  // const filteredRegion = storeRegion.filter((current) => {
-
-  //   const currentNameLowerCase = current.name.toLowerCase();
-  //   if(currentNameLowerCase.includes(search)){
-  //     return currentNameLowerCase;
-  //   }
-  // })
-
-    // console.log(filteredRegion)
 
 
 

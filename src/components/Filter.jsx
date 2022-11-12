@@ -5,7 +5,7 @@ import { MainContext } from '../context/MainContext'
 
 const Filter = ({}) => {
 
-    const { setStoreRegion } = useContext(MainContext)
+    const { setStoreRegion, country } = useContext(MainContext)
 
     const [showFilter, setShowFilter] = useState(false)
 
