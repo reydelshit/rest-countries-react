@@ -5,7 +5,7 @@ import { MainContext } from '../context/MainContext'
 
 const Filter = ({}) => {
 
-    const { setStoreRegion, country } = useContext(MainContext)
+    const { setStoreRegion } = useContext(MainContext)
 
     const [showFilter, setShowFilter] = useState(false)
 
@@ -20,7 +20,7 @@ const Filter = ({}) => {
             const data = await res.json();
     
             setStoreRegion(data);
-            console.log(data)
+            // console.log(data)
     
           }
           fetchRegion();
