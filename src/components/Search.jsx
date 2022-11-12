@@ -5,34 +5,10 @@ import { MainContext } from '../context/MainContext'
 
 
 const Search = () => {
+  
+  const { filterCountry } = useContext(MainContext)
 
-  const { country, storeRegion } = useContext(MainContext)
-
-  const [search, setSearch] = useState(null)
-  // const [filteredCountries, setFilteredCountries] = useState([])
-
-  const filterCountry = (valueFromOnchange) => {
-    const converToLowerCase = valueFromOnchange.toLowerCase();
-    setSearch(converToLowerCase)
-
-  }
-
-  const filteredCountry = country.filter((current) => {
-
-    const currentNameLowerCase = current.name.official.toLowerCase();
-    if(currentNameLowerCase.includes(search)){
-      return currentNameLowerCase;
-    }
-  })
-
-  const filteredRegion = storeRegion.filter((current) => {
-
-    const currentNameLowerCase = current.name.toLowerCase();
-    if(currentNameLowerCase.includes(search)){
-      return currentNameLowerCase;
-    }
-  })
-
+  
 
   return (
     <div className='search__container'>

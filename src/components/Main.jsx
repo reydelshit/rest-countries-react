@@ -4,8 +4,14 @@ import { MainContext } from '../context/MainContext'
 
 const Main = ({search: Search, filter: Filter, country: Country}) => {
   
+  // country all
   const [storeRegion, setStoreRegion] = useState([])
   const [country, setCountry] = useState([]);
+
+
+
+  // search 
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
 
@@ -20,11 +26,9 @@ const Main = ({search: Search, filter: Filter, country: Country}) => {
             })
             setCountry(mapThroughCountries)
           }
-
         fetchCountries();
       } else {
         setCountry(storeRegion)
-
       }
 
     } catch(err){
@@ -34,9 +38,38 @@ const Main = ({search: Search, filter: Filter, country: Country}) => {
   }, [storeRegion])
 
 
+
+  // filter country search 
+  const filterCountry = (valueFromOnchange) => {
+    const converToLowerCase = valueFromOnchange.toLowerCase();
+    setSearch(converToLowerCase)
+
+  }
+
+  const filteredCountry = country.filter((current) => {
+    const currentNameLowerCase = current.name.official.toLowerCase();
+    if(currentNameLowerCase.includes(search)){
+      return currentNameLowerCase;
+    }
+  })
+
+  // console.log(filteredCountry)
+
+  // const filteredRegion = storeRegion.filter((current) => {
+
+  //   const currentNameLowerCase = current.name.toLowerCase();
+  //   if(currentNameLowerCase.includes(search)){
+  //     return currentNameLowerCase;
+  //   }
+  // })
+
+    // console.log(filteredRegion)
+
+
+
   return (
     <div className='main__container'>
-      <MainContext.Provider value={{storeRegion, setStoreRegion, country}}>
+      <MainContext.Provider value={{storeRegion, setStoreRegion, filterCountry, filteredCountry}}>
         <div className="main__navigations">
               <Search/>
               <Filter/>
