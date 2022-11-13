@@ -58,11 +58,30 @@ header{
   /* border: 1px solid olive; */
 }
 
+header h1{
+  font-size: 1.5em;
+  cursor: pointer;
+  /* border: 1px solid olive; */
+}
+
 header div{
   display: flex;
   align-items: center;
 
   /* border: 1px solid olive; */
+}
+
+.switchTheme__container button{
+  background: none;
+  padding: 0.5em;
+  cursor: pointer;
+  border: none;
+  margin-right: 1em;
+}
+
+.switchTheme__container button i{
+  color: var(--white);
+  transform: rotate(-30deg);
 }
 
 .bold__text{
@@ -223,10 +242,18 @@ header div{
   width: 17rem;
   border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
 
+  transition-duration: 0.6s;
+  transition-property: all;
   /* border: 1px solid blue; */
-
 }
+
+.country__indi:hover{
+  border: 1px solid var(--very-light-gray);
+  /* border: 1px solid blue; */
+}
+
 
 .country__indi p{
   

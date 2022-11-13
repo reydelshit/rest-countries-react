@@ -1,5 +1,5 @@
 import React from 'react'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 
 import { MainContext } from '../context/MainContext'
 
@@ -7,8 +7,6 @@ import { MainContext } from '../context/MainContext'
 const Search = () => {
   
   const { filterCountry } = useContext(MainContext)
-
-  
 
   return (
     <div className='search__container'>

@@ -18,10 +18,10 @@ const Country = () => {
   // console.log(countryPerPage)
 
   return (
-    <div>
+    <>
       <CountryCard currentCountries={currentCountries} filteredCountry={filteredCountry}/>
       <PaginationButton totalPost={filteredCountry.length} countryPerPage={countryPerPage} setCurrrentPage={setCurrrentPage}/>
-    </div>
+    </>
   )
 }
 

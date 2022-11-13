@@ -3,16 +3,16 @@ import React from 'react'
 import Bold from './utils/Bold';
 
 
-const CountryHolder = ({currentCountries, filteredCountry}) => {
+const CountryHolder = ({currentCountries}) => {
 
-  // if(filteredRegion){
-  //   console.log('filtered region')
-  // }
+  const viewMoreCard = () => {
+    console.log('click card')
+  }
   
   return (
     <div className='country__container'>
         {currentCountries.map((current, index) => (
-          <div className='country__indi' key={index}>
+          <div onClick={viewMoreCard} className='country__indi' key={index}>
               <img src={current.flags.png} alt={current.name} />
                   <div className='country__information'>
                       {current.name.common ? <h2>{current.name.common}</h2> : <h2>{current.name}</h2>}

@@ -25,7 +25,7 @@ const Filter = ({}) => {
           }
           fetchRegion();
         }
-    }, [currentRegion, setStoreRegion])
+    }, [currentRegion])
     
     const setSomething = (val) => {
       setCurrentRegion(val)
