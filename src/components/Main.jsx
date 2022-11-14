@@ -1,71 +1,18 @@
-import { useState, useEffect } from "react"
+// import { useState, useEffect } from "react"
 
 import { MainContext } from '../context/MainContext'
 
+import useCountries from '../hooks/useCountries';
+
 const Main = ({search: Search, filter: Filter, country: Country}) => {
   
-  // country all
-  const [storeRegion, setStoreRegion] = useState([])
-  const [country, setCountry] = useState([]);
-
-  // search 
-  const [search, setSearch] = useState('')
-
-  useEffect(() => {
-
-    try{
-      if(!storeRegion.length){      
-        const fetchCountries = async () => {
-            const get = await fetch('https://restcountries.com/v3.1/all')
-            const store = await get.json()
-
-            const mapThroughCountries = store.map((co) => {
-              return co;
-            })
-            // console.log(mapThroughCountries)
-            setCountry(mapThroughCountries)
-          }
-        fetchCountries();
-      } else {
-        setCountry(storeRegion)
-      }
-
-    } catch(err){
-      console.log(err)
-    }
-    
-  }, [storeRegion])
-
-
-  // filter country search 
-  const filterCountry = (valueFromOnchange) => {
-    const converToLowerCase = valueFromOnchange.toLowerCase();
-    setSearch(converToLowerCase)
-
-  }
-
-  const filteredCountry = country.filter((current) => {
-
-    if(current.name.official){
-      const currentNameLowerCase = current.name.official.toLowerCase();
-      if(currentNameLowerCase.includes(search)){
-        return currentNameLowerCase;
-      } 
-    } else {
-      const currentNameLowerCase = current.name.toLowerCase();
-        if(currentNameLowerCase.includes(search)){
-          return currentNameLowerCase;
-        }
-    }
-
-  })
-
-
-
+  // ilterCountry, filteredCountry, 
+  // const { filterCountry, filteredCountry} = useSearchFilter();
+  const { country, setStoreRegion, filteredCountry, filterCountry} = useCountries();
 
   return (
     <div className='main__container'>
-      <MainContext.Provider value={{storeRegion, setStoreRegion, filterCountry, filteredCountry}}>
+      <MainContext.Provider value={{country, setStoreRegion, filteredCountry, filterCountry}} >
         <div className="main__navigations">
               <Search/>
               <Filter/>
