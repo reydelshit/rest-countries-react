@@ -1,0 +1,55 @@
+.country__container{
+  
+    display: grid;
+    place-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2.5rem;
+  
+    width: 100%;
+  
+    // border: 1px solid green; 
+
+    .country__indi{
+        padding: 0;
+        background: $dark-blue;
+        height: 20rem;
+        width: 17rem;
+        border-radius: 5px;
+        overflow: hidden;
+        cursor: pointer;
+      
+        transition-duration: 0.6s;
+        transition-property: all;
+        /* border: 1px solid blue; */
+
+        &:hover{
+            border: 1px solid $very-light-gray;
+          }
+    
+          img{
+            width: 100%;
+            height: 45%;
+          
+          }
+      }
+
+      
+
+      .country__information{
+        padding: 0.5rem 1.5rem;
+
+        h2{
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+          }
+
+        p{
+            font-size: 0.9rem;
+            color: $very-light-gray !important;
+            font-weight: $nunito300 !important;
+
+          }
+      }
+      
+  }
+  

@@ -17,11 +17,6 @@ const Country = () => {
   const indexOfFirstPost = indexOfLastPost - countryPerPage;
   const currentCountries = filteredCountry.slice(indexOfFirstPost, indexOfLastPost);
 
-  console.log(currentCountries, 'country component')
-
-
-
-
   return (
     <>
       {currentCountries.length ? <CountryCard currentCountries={currentCountries}/> : <h1> no country existed</h1>}

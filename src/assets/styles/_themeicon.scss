@@ -1,0 +1,12 @@
+.switchTheme__container button{
+    background: none;
+    padding: 0.5em;
+    cursor: pointer;
+    border: none;
+    margin-right: 1em;
+  }
+  
+  .switchTheme__container button i{
+    color: $white;
+    transform: rotate(-30deg);
+  }

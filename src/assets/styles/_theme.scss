@@ -1,0 +1,117 @@
+#dark{
+    background-color: $very-dark-bluee;
+    // height: 100%;
+
+    .paginationBTN__container .paginationButton{
+    
+        button{
+            &:hover{
+                background: $very-dark-bluee;
+                color: $white;
+            }
+            &:focus{
+                background: $white;
+                color: $very-dark-bluee;
+                outline: $dark-gray;
+            }
+        }
+  }
+}
+  
+
+#light{
+
+    .bold__text{
+        color: $dark-blue !important;
+        font-weight: $nunito600 !important;
+
+    }
+
+    h1, h2, p, span, input, input::placeholder{
+        color: $dark-blue;
+    }
+
+    background-color: $very-light-gray;
+
+    header{
+        background-color: $white;
+    }
+
+    .switchTheme__container button i{
+        color: $dark-blue;
+ }
+
+    h1{
+        color: $very-dark-bluee;
+    }
+
+    .search__container{
+         
+    input{
+        background: $white;
+      }
+      
+    .search__icon{
+      
+        color: $dark-gray;
+
+      }
+    }
+
+    .filter__container{
+        button {
+            color: $dark-blue;
+            background: $white;
+            font-weight: $nunito400;
+
+        }
+    
+        .filter__country{
+            color: $dark-blue;
+            background: $white;
+          }
+      
+      }
+      
+
+
+    .country__container {
+        .country__indi{
+            background: $white;
+            box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+
+        }
+
+        .country__information{
+            p{
+                color: $dark-blue !important;
+                font-weight: $nunito300 !important;
+
+            }
+          }
+    } 
+
+    .paginationBTN__container .paginationButton{
+    
+            button{
+
+                font-weight: $nunito600;
+                background: $white;
+                border: 1px solid $very-dark-bluee;
+                color: $dark-gray;
+    
+                &:hover{
+                    background: $very-dark-bluee;
+                    color: $white;
+                }
+                &:focus{
+                    background: $very-dark-bluee;
+                    color: $white;
+                    outline: $dark-gray;
+                }
+            }
+      }
+
+
+}
+  

@@ -1,12 +1,22 @@
 import React from 'react'
+import { useState } from 'react';
 
 import Bold from './utils/Bold';
 
 
 const CountryHolder = ({currentCountries}) => {
 
+    const [countryVal, setCountryVal] = useState({
+      name: null,
+      population: null,
+    })
   const viewMoreCard = () => {
-    console.log('click card')
+    setCountryVal({
+      name: 'Reydel',
+      population: 'hays'
+    })
+
+    console.log(countryVal)
   }
   
   return (

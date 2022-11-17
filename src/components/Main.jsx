@@ -1,13 +1,10 @@
-// import { useState, useEffect } from "react"
-
 import { MainContext } from '../context/MainContext'
 
 import useCountries from '../hooks/useCountries';
 
+
 const Main = ({search: Search, filter: Filter, country: Country}) => {
   
-  // ilterCountry, filteredCountry, 
-  // const { filterCountry, filteredCountry} = useSearchFilter();
   const { country, setStoreRegion, filteredCountry, filterCountry} = useCountries();
 
   return (
