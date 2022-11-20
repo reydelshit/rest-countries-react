@@ -22,15 +22,17 @@ const Country = () => {
 
   if(isLoading){
     return (
-      <h1>LOADINGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG................</h1>
+      <div className='loading__container'>
+        <h1>LOADINGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG................</h1>
+      </div>
     )
   }
 
   return (
-      <>
+      <div>
         {currentCountries.length ? <CountryCard currentCountries={currentCountries}/> : <Loader />}
         <PaginationButton totalPost={filteredCountry.length} countryPerPage={countryPerPage} setCurrrentPage={setCurrrentPage}/>
-      </>
+      </div>
   )
 }
 
