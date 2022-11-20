@@ -19,7 +19,7 @@ const Country = () => {
 
   return (
     <>
-      {currentCountries.length ? <CountryCard currentCountries={currentCountries}/> : <h1> no country existed</h1>}
+      <CountryCard currentCountries={currentCountries}/>
       <PaginationButton totalPost={filteredCountry.length} countryPerPage={countryPerPage} setCurrrentPage={setCurrrentPage}/>
     </>
   )

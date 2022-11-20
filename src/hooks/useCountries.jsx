@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import useLoader from "./useLoader";
 
 
 const useCountries = () => {
@@ -7,16 +8,18 @@ const useCountries = () => {
   const [storeRegion, setStoreRegion] = useState([])
   const [search, setSearch] = useState('');
 
-
+  const {setLoader, isLoading} = useLoader();
 
     useEffect(() => {
         try{
-          if(!storeRegion.length){      
+          if(!storeRegion.length){   
+
             const fetchCountries = async () => {
                 const get = await fetch('https://restcountries.com/v3.1/all')
+                isLoading(get);
                 const store = await get.json()
-    
                 setCountry(store)
+                setLoader(0)
               }
             fetchCountries();
           } else {
