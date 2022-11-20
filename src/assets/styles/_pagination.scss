@@ -1,10 +1,15 @@
 .paginationBTN__container{
 
+    display: flex;
+    // grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    // place-items: center;
     width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
     margin-top: 5rem;
+
+    border: 1px solid orange;
 
     .paginationButton{
   

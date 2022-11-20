@@ -14,27 +14,42 @@ const PaginationButton = ({totalPost, countryPerPage, setCurrrentPage}) => {
 
     const [paginationDecider, setPaginationDeciderd] = useState(10)
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //   const getCurrentWindowSize = () => {
-    //     setWindowSize({
-    //       width: window.innerWidth
-    //     })
-    //   }
+      const getCurrentWindowSize = () => {
+        setWindowSize({
+          width: window.innerWidth
+        })
 
-    // window.addEventListener("resize", getCurrentWindowSize)
+      }
 
-    // console.log(windowSize)
+      window.addEventListener("resize", getCurrentWindowSize)
 
-    // if(windowSize < 1000){
-    //   setPaginationDeciderd(8)
-    // }
 
-    //   return () => {
-    //     window.addEventListener("resize", getCurrentWindowSize)
-    //   };
+    console.log(windowSize)
 
-    // }, [windowSize])
+    if(window.innerWidth < 1000){
+      setPaginationDeciderd(8)
+    } else {
+      setPaginationDeciderd(10)
+    }
+
+    if(window.innerWidth < 880){
+      setPaginationDeciderd(5)
+
+    }
+
+    if(window.innerWidth < 580){
+      setPaginationDeciderd(3)
+
+    }
+
+      return () => {
+        window.removeEventListener("resize", getCurrentWindowSize)
+
+      };
+
+    }, [windowSize])
 
     
 
