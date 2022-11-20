@@ -1,6 +1,7 @@
 import { MainContext } from '../context/MainContext'
 
 import useCountries from '../hooks/useCountries';
+import Loader from './Loader';
 
 
 const Main = ({search: Search, filter: Filter, country: Country}) => {
@@ -15,7 +16,7 @@ const Main = ({search: Search, filter: Filter, country: Country}) => {
               <Filter/>
           </div>
           <div className="main__body">
-              <Country/>
+              {country ? <Country/> : <Loader />}
           </div>
       </MainContext.Provider>
 
