@@ -4,12 +4,25 @@
         padding: 1rem 0.8rem;
     }
     
+    header {
+
+      h1{
+        font-size: 1em;
+      }
+      .switchTheme__container span{
+        font-size: 0.9em;
+      }
+    } 
+
+    
+    
     .main__container{
 
         display: flex;
         background: inherit;
         flex-direction: column;
         justify-content: center;
+        height: 100% !important;
       
       }
     
@@ -20,7 +33,7 @@
         flex-direction: column;
         justify-content: center;
       
-        border: 1px solid pink;
+        // border: 1px solid pink;
       }
     
       

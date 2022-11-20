@@ -40,6 +40,8 @@ header{
   display: flex;
   justify-content: space-between;
   background-color: $dark-blue;
+  align-items: center;
+
 
   // border: 1px solid blue;
 }
@@ -70,9 +72,9 @@ header div{
   flex-direction: column;
   height: 6rem;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
-  // border: 1px solid yellow;
+  border: 1px solid yellow;
 
 }
 
@@ -90,11 +92,13 @@ header div{
 
   margin-top: 3rem;
   padding: 0.5rem 0;
-  height: 100%;
+  // height: 100%;
 
   // border: 1px solid orange;
 
 }
+
+
 
 
 @import './assets/styles/mobilescreen';

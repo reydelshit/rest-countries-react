@@ -4,8 +4,8 @@ import { MainContext } from '../context/MainContext';
 
 import CountryCard from './CountryCard';
 import PaginationButton from './PaginationButton';
-import Loader from './Loader';
 import useCountries from '../hooks/useCountries';
+import NoCountry from './NoCountry';
 
 
 const Country = () => {
@@ -30,7 +30,7 @@ const Country = () => {
 
   return (
       <div>
-        {currentCountries.length ? <CountryCard currentCountries={currentCountries}/> : <Loader />}
+        {currentCountries.length ? <CountryCard currentCountries={currentCountries}/> : <NoCountry />}
         <PaginationButton totalPost={filteredCountry.length} countryPerPage={countryPerPage} setCurrrentPage={setCurrrentPage}/>
       </div>
   )
