@@ -1,13 +1,11 @@
 import { useContext, useEffect, useState  } from 'react'
 
 import { MainContext } from '../context/MainContext'
-import useLoader from './useLoader'
 
 
 const useRegion = () => {
   
     const { setStoreRegion } = useContext(MainContext)
-    const {setLoader, isLoading} = useLoader();
 
 
     const [showFilter, setShowFilter] = useState(false)
@@ -19,9 +17,7 @@ const useRegion = () => {
         if(currentRegion){
           const fetchRegion = async () => {
             const res = await fetch(`https://restcountries.com/v2/region/${currentRegion}`)
-            isLoading(res)
             const data = await res.json();
-            setLoader(0)
     
             setStoreRegion(data);
             // console.log(data)

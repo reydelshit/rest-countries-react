@@ -2,7 +2,7 @@ import React from 'react'
 
 const Loader = () => {
   return (
-    <div>Loading niii....</div>
+    <h1>Walay Country Tangina</h1>
   )
 }
 

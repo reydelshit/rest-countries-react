@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react"
-import useLoader from "./useLoader";
-
 
 const useCountries = () => {
 
@@ -8,7 +6,9 @@ const useCountries = () => {
   const [storeRegion, setStoreRegion] = useState([])
   const [search, setSearch] = useState('');
 
-  const {setLoader, isLoading} = useLoader();
+  // const {setLoader, isLoading} = useLoader();
+
+  const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         try{
@@ -16,10 +16,9 @@ const useCountries = () => {
 
             const fetchCountries = async () => {
                 const get = await fetch('https://restcountries.com/v3.1/all')
-                isLoading(get);
                 const store = await get.json()
                 setCountry(store)
-                setLoader(0)
+                setIsLoading(false)
               }
             fetchCountries();
           } else {
@@ -55,7 +54,7 @@ const useCountries = () => {
     
       })
 
-      return {country, storeRegion, setStoreRegion, filteredCountry, filterCountry}
+      return {country, storeRegion, setStoreRegion, filteredCountry, filterCountry, isLoading}
 }
 
 export default useCountries
