@@ -1,0 +1,63 @@
+@import './assets/styles/fonts';
+
+
+@import './assets/colors/colors';
+@import './assets/styles/theme';
+@import './assets/styles/utils';
+
+@import './assets/styles/search';
+@import './assets/styles/filter';
+
+
+@import './assets/styles/themeicon';
+
+
+h1, h2, p, span, input, input::placeholder{
+  color: $white;
+}
+
+body, .App{
+  height: 100vh;
+}
+
+*,html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-nunito;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* padding  */
+
+header, .main__container{
+  padding: 1.5rem 2.5rem;
+}
+
+
+
+
+/* main container  */
+
+.main__container{
+
+  display: flex;
+  background: inherit;
+  flex-direction: column;
+  height: 6rem;
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid yellow;
+
+}
+
+
+
+
+@import './assets/styles/mobilescreen';

@@ -22,7 +22,9 @@
         background: inherit;
         flex-direction: column;
         justify-content: center;
-        height: 100% !important;
+        // height: 100% !important;
+
+        // border: 1px solid orange;
       
       }
     
@@ -34,6 +36,13 @@
         justify-content: center;
       
         // border: 1px solid pink;
+      }
+
+      .main__body{
+        height: 100%;
+      
+        // border: 10px solid orange;
+      
       }
     
       
@@ -62,27 +71,3 @@
       
 }
     
-
-// @media screen and (max-width: 615px) {
-//     .paginationBTN__container{
-
-//         width: 100%;
-//         justify-content: center;
-//         flex-direction: column;
-//         display: flex;
-//         margin-top: 5rem;
-    
-//     }
-// }
-
-// @media screen and (max-width: 615px) {
-//   .paginationBTN__container{
-
-//       width: 100%;
-//       justify-content: center;
-//       flex-direction: column;
-//       display: flex;
-//       margin-top: 5rem;
-  
-//   }
-// }
