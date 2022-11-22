@@ -1,0 +1,36 @@
+.search__container{
+
+    position: relative;
+    height: 100%;
+    
+  
+    // border: 1px solid olive; 
+  }
+  
+  .search__container input{
+    
+    width: 30rem;
+    height: 100%;
+    padding: 0 1.5rem 0 3.5rem;
+    border: none;
+    outline: none;
+    background: $dark-blue;
+    font-size: 0.8rem;
+    border-radius: 5px;
+  
+  }
+  
+  
+  .search__container .search__icon{
+  
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    right: 0;
+  
+    width: 0;
+    color: $white;
+    font-size: 1.5rem;
+  
+    /* border: 1px solid orange; */
+  }

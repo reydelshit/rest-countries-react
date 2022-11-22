@@ -1,0 +1,44 @@
+@import './assets/styles/fonts';
+
+
+@import './assets/colors/colors';
+@import './assets/styles/theme';
+@import './assets/styles/utils';
+
+
+
+
+
+// header 
+@import './assets/styles/header';
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-nunito;
+
+}
+
+body{
+  height: 100vh;
+}
+
+h1, h2, p, span, input, input::placeholder{
+  color: $white;
+}
+
+header, .main__container{
+  padding: 1.5rem 2.5rem;
+}
+
+
+
+
+// main container
+
+@import './assets/styles/main.scss';
+
+
+@import './assets/styles/mobilescreen';
