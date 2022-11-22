@@ -21,6 +21,10 @@
 
 }
 
+body{
+  height: 100vh;
+}
+
 h1, h2, p, span, input, input::placeholder{
   color: $white;
 }
