@@ -3,6 +3,7 @@ import { MainContext } from '../context/MainContext'
 
 import CountryContainer from '../components/secondary/CountryContainer'
 import PaginationButton from '../components/Pagination'
+import NoCountry from '../components/secondary/NoCountry'
 
 
 const Main = () => {
@@ -35,15 +36,13 @@ const currentCountries = filteredCountry.slice(indexOfFirstPost, indexOfLastPost
 
   if(isLoading){
     return(
-      <div className='loading__container'>
-        <h1>Loading.....</h1>
-      </div>
+      <NoCountry />
     )
   }
   return (
     <div className='main__container'>
       <div className='main__body'>
-          <CountryContainer currentCountries={currentCountries}/>
+          {filteredCountry.length ? <CountryContainer currentCountries={currentCountries}/> : <NoCountry />}
           <PaginationButton setCurrrentPage={setCurrrentPage} totalPost={filteredCountry.length} countryPerPage={countryPerPage}/>
       </div>
     </div>

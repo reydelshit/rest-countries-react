@@ -17,7 +17,7 @@ const useDefaultCountry = () => {
 
         setStoreCountries(data)
 
-        // console.log(storeCountries)
+        // console.log(data)
 
       }
 

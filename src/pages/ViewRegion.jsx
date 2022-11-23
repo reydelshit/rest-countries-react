@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom'
 
 import PaginationButton from '../components/Pagination'
 import CountryContainer from '../components/secondary/CountryContainer'
+import NoCountry from '../components/secondary/NoCountry'
 
 import { MainContext } from '../context/MainContext'
 
@@ -26,6 +27,7 @@ const ViewRegion = () => {
         const res = await fetch(`https://restcountries.com/v2/region/${reg}`)
         const data = await res.json();
         setStoreCountries(data)
+        console.log(data)
         setIsLoading(false)
 
       }
@@ -40,9 +42,7 @@ const currentCountries = filteredCountry.slice(indexOfFirstPost, indexOfLastPost
 
   if(isLoading){
     return(
-      <div className='loading__container'>
-        <h1>Loading.....</h1>
-      </div>
+      <NoCountry />
     )
   }
 
@@ -50,7 +50,7 @@ const currentCountries = filteredCountry.slice(indexOfFirstPost, indexOfLastPost
     <div className='main__container'>
       <div className='main__body'>
         {filteredCountry.length > 1 && <h1 style={{textAlign: "center", marginBottom: '1rem'}}>{reg}</h1>}
-          <CountryContainer currentCountries={currentCountries}/>
+          {filteredCountry.length ? <CountryContainer currentCountries={currentCountries}/> : <NoCountry />}
           <PaginationButton setCurrrentPage={setCurrrentPage} totalPost={filteredCountry.length} countryPerPage={countryPerPage}/>
       </div>
     </div>

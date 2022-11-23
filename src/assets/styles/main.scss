@@ -35,10 +35,38 @@
   
   }
 
-  .countrytrytry {
-    margin-top: 6rem
-  }
   
+  .loading__container{
+
+    // display: grid;
+    // place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    .spinner {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 9px solid;
+      border-color: #dbdcef;
+      border-right-color: #474bff;
+      animation: spinner-d3wgkg 1s infinite linear;
+      margin-right: 1em;
+   }
+   
+   @keyframes spinner-d3wgkg {
+      to {
+         transform: rotate(1turn);
+      }
+   }
+
+   
+  }
+
+
 
 @import './filter';
 @import './search';

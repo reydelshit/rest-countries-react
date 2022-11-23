@@ -7,8 +7,6 @@
 
 
 
-
-
 // header 
 @import './assets/styles/header';
 
@@ -25,8 +23,9 @@ body{
   height: 100vh;
 }
 
-h1, h2, p, span, input, input::placeholder{
+h1, h2, p, span, input, input::placeholder, a{
   color: $white;
+  text-decoration: none;
 }
 
 header, .main__container{
@@ -42,3 +41,11 @@ header, .main__container{
 
 
 @import './assets/styles/mobilescreen';
+
+
+
+.counttt{
+  // background: green;
+  color: black;
+  height: 100%;
+}
