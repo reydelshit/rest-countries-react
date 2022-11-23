@@ -21,7 +21,7 @@
     justify-content: space-around;
     align-items: center;
 
-    // border: 1px solid orange;
+    border: 1px solid orange;
 
 
     img{
@@ -39,20 +39,25 @@
 
         border: 1px solid orange;
 
+        h1{
+            font-size: 2rem;
+        }
 
         .country__info{
             display: flex;
-            align-items: center;
+            // align-items: center;
             justify-content: space-between;
 
             margin-top: 2rem;
 
+            // border: 1px solid orange;
+
             span{
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             p{
-                font-size: 1rem;
+                font-size: 1.1rem;
                 color: $very-light-gray !important;
                 font-weight: $nunito300 !important;
             }

@@ -29,6 +29,7 @@ const ViewCountry = () => {
       setCountryDetails(data)
 
       console.log(data)
+
     }
 
 
@@ -57,7 +58,7 @@ const ViewCountry = () => {
     <div className='country__details'>
       {countryDetails.map((details, index) => {
 
-        const {name, population, region, capital, subregion, tld, languages, currencies} = details;
+        const {name, population, region, capital, subregion, tld, languages, borders} = details;
 
         return(        
         <div className='country__container__indi' key={index}>
@@ -78,8 +79,11 @@ const ViewCountry = () => {
                   <p><Bold text="Top Level Domain"/>: {tld}</p>
                   <p><Bold text="Currencies"/>: {iterateCurrency}</p>
                   <p><Bold text="Languages"/>: {Object.values(languages)}</p>
+                </div>
               </div>
-              </div>
+              <div>
+                  <p><Bold text="Border Countries"/>: {borders}</p>
+                </div>
             </div>
           </div>
 
