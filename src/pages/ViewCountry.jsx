@@ -54,29 +54,31 @@ const ViewCountry = () => {
 
 
   return (
-    <div className='main__container'>
+    <div className='country__details'>
       {countryDetails.map((details, index) => {
 
         const {name, population, region, capital, subregion, tld, languages, currencies} = details;
 
         return(        
-        <div key={index}>
+        <div className='country__container__indi' key={index}>
           <img src={details.flags.png} alt={details.name.common} />
 
-            <div>
+            <div className='country__details'>
               <h1>{name.common}</h1>
-              <div>
-                <p><Bold text="Native Name"/>: {iterateNativeName}</p>
-                <p><Bold text="Population"/>: {population}</p>
-                <p><Bold text="Region"/>: {region}</p>
-                <p><Bold text="Sub Region"/>: {subregion}</p>
-                <p><Bold text="Capital"/>: {capital}</p>
-              </div>
-              <div>
-                <p><Bold text="Top Level Domain"/>: {tld}</p>
-                <p><Bold text="Currencies"/>: {iterateCurrency}</p>
-                <p><Bold text="Languages"/>: {Object.values(languages)}</p>
+              <div className='country__info'>
+                <div>
+                  <p><Bold text="Native Name"/>: {iterateNativeName}</p>
+                  <p><Bold text="Population"/>: {population}</p>
+                  <p><Bold text="Region"/>: {region}</p>
+                  <p><Bold text="Sub Region"/>: {subregion}</p>
+                  <p><Bold text="Capital"/>: {capital}</p>
+                </div>
 
+                <div>
+                  <p><Bold text="Top Level Domain"/>: {tld}</p>
+                  <p><Bold text="Currencies"/>: {iterateCurrency}</p>
+                  <p><Bold text="Languages"/>: {Object.values(languages)}</p>
+              </div>
               </div>
             </div>
           </div>
