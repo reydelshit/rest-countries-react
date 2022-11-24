@@ -15,12 +15,6 @@ const Header = () => {
             <Link to="/"><h1>Where in the world?</h1></Link>
             <SwitchTheme />
         </div>
-
-        <div className='main__navigations'>
-            <Search />
-            <Filter />
-        </div>
-
     </header>
   )
 }

@@ -6,6 +6,8 @@ import PaginationButton from '../components/Pagination'
 import CountryContainer from '../components/secondary/CountryContainer'
 import NoCountry from '../components/secondary/NoCountry'
 
+import Navigation from '../components/Navigation'
+
 import { MainContext } from '../context/MainContext'
 
 
@@ -48,6 +50,7 @@ const currentCountries = filteredCountry.slice(indexOfFirstPost, indexOfLastPost
 
   return (
     <div className='main__container'>
+        <Navigation />
       <div className='main__body'>
         {filteredCountry.length > 1 && <h1 style={{textAlign: "center", marginBottom: '1rem'}}>{reg}</h1>}
           {filteredCountry.length ? <CountryContainer currentCountries={currentCountries}/> : <NoCountry />}

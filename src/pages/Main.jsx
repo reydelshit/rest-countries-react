@@ -5,6 +5,8 @@ import CountryContainer from '../components/secondary/CountryContainer'
 import PaginationButton from '../components/Pagination'
 import NoCountry from '../components/secondary/NoCountry'
 
+import Navigation from '../components/Navigation'
+
 
 const Main = () => {
 
@@ -41,6 +43,7 @@ const currentCountries = filteredCountry.slice(indexOfFirstPost, indexOfLastPost
   }
   return (
     <div className='main__container'>
+        <Navigation />
       <div className='main__body'>
           {filteredCountry.length ? <CountryContainer currentCountries={currentCountries}/> : <NoCountry />}
           <PaginationButton setCurrrentPage={setCurrrentPage} totalPost={filteredCountry.length} countryPerPage={countryPerPage}/>
